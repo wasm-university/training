@@ -1,7 +1,7 @@
 {
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Default Light+",
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 16,
   "editor.fontSize": 14,
   "go.toolsEnvVars": {
     "GOOS": "js",

@@ -1,4 +1,6 @@
-FROM gitpod/workspace-full
+#FROM gitpod/workspace-full
+FROM gitpod/workspace-dotnet
+
 
 RUN sudo apt-get update && \
     sudo apt-get install gettext libncurses5 libxkbcommon0 libtinfo5 -y

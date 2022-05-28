@@ -1,7 +1,23 @@
-image: k33g/wasm-university-training:0.0.0
+image: k33g/wasm-university-training:0.0.1
 
 tasks:
   - name: initialize
+    before: |
+
+      # ------------------------------------
+      # wasmer
+      # ------------------------------------
+      source /home/gitpod/.wasmer/wasmer.sh
+      wasmer --version
+      # ------------------------------------
+      # wasmtime
+      # ------------------------------------
+      wasmtime --version
+      # ------------------------------------
+      # wasmedge dependencies
+      # ------------------------------------
+      wasmedge --version
+
     init: |
       echo "🚀 initialize"
 

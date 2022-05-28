@@ -104,7 +104,7 @@ Wasm file ~= container image, **smaller**, safer, without an OS
 ---
 
 ## C'est une bonne limitation
-### Safe by default
+### <mark>Safe by default</mark>
 
 ---
 
@@ -239,7 +239,8 @@ WebAssembly.instantiateStreaming(fetch("main.wasm"))
 ![fg](#FFFFFF)
 # Démo 🚀
 
-https://gitpod.io/#https://github.com/wasm-university/training/tree/main/00-c-web
+
+<a href="https://github.com/wasm-university/training/tree/main/00-c-web" target="_blank">00-c-web</a>
 
 ---
 ![bg](#3AF1F2)

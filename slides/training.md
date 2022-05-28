@@ -239,6 +239,8 @@ WebAssembly.instantiateStreaming(fetch("main.wasm"))
 ![fg](#FFFFFF)
 # Démo 🚀
 
+https://gitpod.io/#https://github.com/wasm-university/training/tree/main/00-c-web
+
 ---
 ![bg](#3AF1F2)
 ![fg](#000000)

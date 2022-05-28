@@ -283,13 +283,57 @@ WebAssembly.instantiateStreaming(fetch("main.wasm"))
 ---
 
 # Title
+
 ---
 
+![bg](#3AF1F2)
+![fg](#000000)
+# Wasm avec Go et NodeJS
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+![bg](#3AF1F2)
+![fg](#000000)
+# 🦀 Wasm avec Rust et NodeJS
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
 ![bg](#3A84F2)
 ![fg](#FFFFFF)
 
 # Libérez, délivrez Wasm
-## ... du navigateur
+## ... du navigateur (de la VM JS)
 ### WASI
 ---
 

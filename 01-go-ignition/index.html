@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+    <link rel="stylesheet" href="my.css">
+
+		<script src="wasm_exec.js"></script>
+
+	</head>
+	<body>
+		<h1>WASM Experiments</h1>
+		<h2>👋 n'oublie pas d'ouvrir la console 😃</h2>
+		<script> 
+			/* 1️⃣ 
+				Go Wasm runtime 
+				provided to us by wasm_exec.js
+			*/
+			const go = new Go() // Go Wasm runtime
+			
+			WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject) // Get the importObject from the go instance.
+				.then(result => {
+					console.log("👋 main.wasm is loaded")
+					console.log("📝 Import Object", go.importObject)
+					console.log("📦 Result", result)
+					
+					// execute `main`
+					go.run(result.instance)
+					// instance object contains all the Exported WebAssembly functions					
+				})
+				.catch(error => {
+					console.log("😡 ouch", error)
+				})
+
+		</script>
+	</body>
+</html>

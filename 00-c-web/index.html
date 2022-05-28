@@ -8,17 +8,15 @@
 		<h2>👋 n'oublie pas d'ouvrir la console 😃</h2>
 		<script> 
 
-      const style = 'font-size: 2em;'
-
 			WebAssembly.instantiateStreaming(fetch("main.wasm")) 
 				.then(({ instance }) => {
-					console.log("%c👋 main.wasm is loaded", style)
-					console.log("%c📦 Instance", style, instance)
+					console.log("👋 main.wasm is loaded")
+					console.log("📦 Instance", instance)
 					
           const value = instance.exports.power(2, 2)
 
-					console.log(`%c🤖 value: ${value}`, style)
-					console.log(`%c👋 greet: ${instance.exports.greet()} (location of the value)`, style) // 🖐️ this is the location of the value
+					console.log(`🤖 value: ${value}`)
+					console.log(`👋 greet: ${instance.exports.greet()} (location of the value)`) // 🖐️ this is the location of the value
 
           /*
             - read the memory
@@ -32,7 +30,7 @@
 					const memory = instance.exports.memory;
 					const buffer = new Uint8Array(memory.buffer, greetValue, 12);
 					const str = new TextDecoder("utf8").decode(buffer);
-					console.log(`%c📝: ${str}`, style)
+					console.log(`📝: ${str}`)
           */
 					
 				})

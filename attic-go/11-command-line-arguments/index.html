@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+    <link rel="stylesheet" href="my.css">
+
+		<script src="wasm_exec.js"></script>
+
+	</head>
+	<body>
+		<h1>WASM Experiments</h1>
+		<script> 
+			// This is a polyfill for Safari
+			if (!WebAssembly.instantiateStreaming) { 
+				WebAssembly.instantiateStreaming = async (resp, importObject) => {
+					const source = await (await resp).arrayBuffer()
+					return await WebAssembly.instantiate(source, importObject)
+				}
+			}
+
+
+			/**
+			 * Promise to load the wasm file
+			 * 
+			 * @param {String} path
+			 * @param {Array} args
+			 * @returns {Promise}
+			 */
+			function loadWasm(path, args) {
+
+				const go = new Go()
+
+				return new Promise((resolve, reject) => {
+					WebAssembly.instantiateStreaming(fetch(path), go.importObject)
+					.then(result => {
+						// 🖐️ handle arguments 🖐️
+						if(args) go.argv = args
+
+						go.run(result.instance)
+						resolve(result.instance)
+					})
+					.catch(error => {
+						reject(error)
+					})
+				})
+			}
+
+
+			// Load the wasm file
+			loadWasm("main.wasm", ["JavaScript","Hello", "Bob","Morane"]).then(wasm => {
+				console.log("wasm file loaded")
+
+			}).catch(error => {
+				console.log("ouch", error)
+			}) 
+
+		</script>
+	</body>
+</html>

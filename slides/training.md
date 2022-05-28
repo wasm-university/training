@@ -261,6 +261,30 @@ WebAssembly.instantiateStreaming(fetch("main.wasm"))
 
 ---
 
+# Title
+
+---
+![bg](#3AF1F2)
+![fg](#000000)
+# 🦀 Wasm avec Rust dans le navigateur
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+---
+
 ![bg](#3A84F2)
 ![fg](#FFFFFF)
 

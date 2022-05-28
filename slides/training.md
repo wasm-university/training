@@ -56,24 +56,77 @@ https://github.com/wasm-university/training
 
 ---
 
-# Title
+# Wasm Quoi/Pourquoi ?
+> - prendre le schéma qui explique ce que c'est (+ajouter pourquoi)
+> - 
 
 ---
 
-# Title
+# Histoire
+> - prendre le schéma qui explique ce que c'est
+> - 
 
 ---
 
-# Title
+## Wasm peut s’exécuter partout
+
+JavaScript (navigateur)
+JavaScript (Node.js)
+GraalVM
+Runtimes **WASI** (Wasmer, Wastime, Wasmedge, …): CLI & Libs
+<!-- webassembly system interface -->
+---
+
+Wasm file ~= container image, **smaller**, safer, without an OS
 
 ---
 
-# Title
+# Hosts
+> - prendre le schéma qui explique ce que c'est
+> - 
+<!-- la portabilité de wasm dépend de l'hôte -->
 
 ---
 
-# Title
+### 🖐️ Le module Wasm n’accède pas à l’OS
 
+- Wasm c’est pour du compute (au départ)
+- Pas d’accès aux fonctions systèmes de l’OS (hors host functions)
+  - I/O
+  - Sockets
+- Pas d’accès à la mémoire hors allocation spécifique
+<!-- vérifier cette partie -->
+
+---
+
+##### Toolchains par langage & hôte
+
+<style scoped>
+table {
+    height: 80%;
+    width: 100%;
+    font-size: 20px;
+    color: green;
+}
+th {
+    color: blue;
+}
+</style>
+
+Langage         | WASM (VM JS)                    | WASI                                     | Remarks
+:---------------|:--------------------------------|:-----------------------------------------|:--------
+C/C++           | EMScripten, LLVM (clang)        | LLVM, SDK C/C++ Wasmer                   |
+Rust            | Wasm-pack + wasm-bindgen (glue) | rustup target add wasm32-wasi            |     
+Go              | Intégré à la toolchain standard | Non ou alors utiliser TinyGo             |
+Assemblyscript  | Intégré                         | Intégré                                  | Ne cible que du WASM
+Swift           | SwiftWasm                       | SwiftWasm                                |
+Kotlin          | Kotlin native (expérimental)    |                                          |
+C#              | Blazor (solution complète)      | dotnet add package Wasi.Sdk --prerelease |
+Ruby            | Artichoke                       | En cours (portage CRuby Wasm32-WASI)     |
+Python          | Expérimental                    |                                          |
+
+<!-- regarder prez de Sébastien pour Kotlin -->
+###### *Liste non exhaustive*
 ---
 
 # Title

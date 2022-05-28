@@ -87,6 +87,10 @@ Wasm file ~= container image, **smaller**, safer, without an OS
 <!-- la portabilité de wasm dépend de l'hôte -->
 
 ---
+![bg](#C4D8F8)
+# Wasm a "quelques" limitations
+
+---
 
 ### 🖐️ Le module Wasm n’accède pas à l’OS
 
@@ -96,6 +100,34 @@ Wasm file ~= container image, **smaller**, safer, without an OS
   - Sockets
 - Pas d’accès à la mémoire hors allocation spécifique
 <!-- vérifier cette partie -->
+
+---
+
+## C'est une bonne limitation
+### Safe by default
+
+---
+
+### 📣 La Communication Wasm <=> Host  n’est pas triviale  
+> (trop bas niveau ?)
+  
+#### 4 types de données pour les paramètres: 
+  
+  - 32 & 64 Bit Integer
+  - 32 & 64 Bit Floating-Point Number
+
+---
+
+## String 😡
+
+---
+
+> Certains "hôtes" (et toolchains) ont déjà tout prévu (certains frameworks aussi pour WASI)
+
+---
+
+![bg](#B8F6C5)
+# 🛠 ToolChains
 
 ---
 
@@ -116,8 +148,8 @@ th {
 Langage         | WASM (VM JS)                    | WASI                                     | Remarks
 :---------------|:--------------------------------|:-----------------------------------------|:--------
 C/C++           | EMScripten, LLVM (clang)        | LLVM, SDK C/C++ Wasmer                   |
-Rust            | Wasm-pack + wasm-bindgen (glue) | rustup target add wasm32-wasi            |     
-Go              | Intégré à la toolchain standard | Non ou alors utiliser TinyGo             |
+Rust            | Wasm-pack + wasm-bindgen (glue) | rustup target add wasm32-wasi            | support navigateur 💖    
+Go              | Intégré à la toolchain standard | Non ou alors utiliser TinyGo             | support navigateur 💖
 Assemblyscript  | Intégré                         | Intégré                                  | Ne cible que du WASM
 Swift           | SwiftWasm                       | SwiftWasm                                |
 Kotlin          | Kotlin native (expérimental)    |                                          |
@@ -129,15 +161,21 @@ Python          | Expérimental                    |                            
 ###### *Liste non exhaustive*
 ---
 
-# Title
+![bg](#3A84F2)
+![fg](#FFFFFF)
+# Wasm & le Navigateur
 
 ---
 
-# Title
+- 1er contact: un peu de C
+- Go
+- Rust
 
 ---
 
-# Title
+### Mode de fonctionnement des démos Web
+
+> refaire un schema avec index.html et tout le touin touin
 
 ---
 

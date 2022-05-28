@@ -4,7 +4,7 @@ size: 16:9
 paginate: true
 ---
 
-# Petit cours de Wasm front/back par l'exemple
+# Petit cours de <mark>Wasm</mark> front/back par l'exemple
 
 **Voxxed Luxembourg 2022**
 
@@ -36,6 +36,8 @@ https://github.com/wasm-university/training
 - 10% Théorie 90% Démos (en gros)
 - 🚀 Des démos que vous pourrez refaire :
   - https://github.com/wasm-university
+  - en utilisant <mark>Gitpod</mark>
+  - ou en utilisant <mark>DevContainer</mark>
 
 ---
 
@@ -262,6 +264,19 @@ WebAssembly.instantiateStreaming(fetch("main.wasm"))
 ---
 
 # Title
+
+---
+![bg](#000000)
+![fg](#FFFFFF)
+# Démos 🚀
+
+<a href="https://github.com/wasm-university/training/tree/main/01-go-ignition" target="_blank">01-go-ignition</a>
+<a href="https://github.com/wasm-university/training/tree/main/02-go-dom" target="_blank">02-go-dom</a>
+<a href="https://github.com/wasm-university/training/tree/main/03-go-call-go-function" target="_blank">03-go-call-go-function</a>
+<a href="https://github.com/wasm-university/training/tree/main/04-go-return-json" target="_blank">04-go-return-json</a>
+<a href="https://github.com/wasm-university/training/tree/main/05-go-json-as-parameter" target="_blank">05-go-json-as-parameter</a>
+<a href="https://github.com/wasm-university/training/tree/main/06-go-call-a-js-function" target="_blank">06-go-call-a-js-function</a>
+<a href="https://github.com/wasm-university/training/tree/main/07-go-call-js-promise" target="_blank">07-go-call-js-promise</a>
 
 ---
 ![bg](#3AF1F2)

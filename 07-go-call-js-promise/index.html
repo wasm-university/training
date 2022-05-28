@@ -17,15 +17,13 @@
 				}
 			}
 
-			/**
-			 * Promise to load the wasm file
-			 * 
-			 * @param {String} path
-			 * @returns {Promise}
-			 */
       function loadWasm(path) {
 
         const go = new Go()
+
+				// 🖐️ hack for tiny go
+  			//go.importObject.env["syscall/js.finalizeRef"] = () => {}
+
 
         return new Promise((resolve, reject) => {
           WebAssembly.instantiateStreaming(fetch(path), go.importObject)
@@ -50,9 +48,9 @@
 
 					setTimeout(_ => {
 						if (generateError) { 
-							reject(Error("Fail")) 
+							reject(Error("💥 Fail 🔥")) 
 						} else { 
-							resolve("Success") 
+							resolve("🎉 Success 🎁") 
 						}
 					}, 3000)
 

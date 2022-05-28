@@ -17,12 +17,6 @@
 				}
 			}
 
-			/**
-			 * Promise to load the wasm file
-			 * 
-			 * @param {String} path
-			 * @returns {Promise}
-			 */
       function loadWasm(path) {
 
         const go = new Go()
@@ -45,14 +39,11 @@
 				return `👋 Hello ${name} 😃`
 			}
 
-			var bill = {age:42}
 
 			// Load the wasm file
 			loadWasm("main.wasm").then(wasm => {
 				
-				console.log("message (after):", message)
-				
-				console.log("bill (after):", bill)
+				console.log("[js] message (after):", message)
 
 			}).catch(error => {
 				console.log("ouch", error)

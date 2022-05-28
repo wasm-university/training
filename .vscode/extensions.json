@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+      "golang.go",
+      "pkief.material-icon-theme",
+      "rust-lang.rust",
+      "bungcip.better-toml"
+  ]
+}

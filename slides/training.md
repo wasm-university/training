@@ -248,7 +248,7 @@ WebAssembly.instantiateStreaming(fetch("main.wasm"))
 # Wasm avec Go dans le navigateur
 
 ---
-
+<!-- 🖐 last update -->
 # Title
 
 ---

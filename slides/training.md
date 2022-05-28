@@ -29,3 +29,89 @@ https://github.com/wasm-university/training
 - RdV des speakers
 
 ---
+
+# Déroulement
+
+- 👋 Vous pouvez intervenir à tout moment
+- 10% Théorie 90% Démos (en gros)
+- 🚀 Des démos que vous pourrez refaire :
+  - https://github.com/wasm-university
+
+---
+
+# Objectif(s)
+
+- Université “découverte” par l’exemple
+- Rien de complexe
+- Repartir avec le bagage nécessaire 🧳
+
+🖐️ Ne posez pas de questions compliquées 😛
+
+---
+
+# WebAssembly ???
+
+## WASM ???
+### C'est parti ! 🚀
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---

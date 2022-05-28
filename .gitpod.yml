@@ -20,6 +20,8 @@ tasks:
 
     init: |
       echo "🚀 initialize"
+      npm install
+      
 
 ports:
   - port: 8080

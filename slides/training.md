@@ -3,7 +3,12 @@ theme: uncover
 size: 16:9
 paginate: true
 ---
-
+<style scoped>
+  mark {
+    background-color: #942EC1;
+    color: #FFFFFF;
+  }
+</style>
 # Petit cours de <mark>Wasm</mark> front/back par l'exemple
 
 **Voxxed Luxembourg 2022**
@@ -250,20 +255,70 @@ WebAssembly.instantiateStreaming(fetch("main.wasm"))
 # Wasm avec Go dans le navigateur
 
 ---
-<!-- 🖐 last update -->
-# Title
+
+<style scoped>
+  mark {
+    background-color: #EFD217;
+    color: #000000;
+  }
+</style>
+
+# Go + JavaScript = 💖
+
+```bash
+cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" .
+```
+
+```html
+<script src="wasm_exec.js"></script>
+```
  
+ > Disclaimer, I 💛 <mark>**JavaScript**</mark>
 ---
 
-# Title
+## Fonctions en Go: 
+`[]js.Value` <mark>&</mark> `interface{}`
+
+```go
+func Hello(this js.Value, args []js.Value) interface{} {
+  message := args[0].String() // get the parameters
+  return "😃 Hello " + message
+}
+```
+
+```go
+js.Global().Set("Hello", js.FuncOf(Hello))
+```
+
+<!-- 
+Et avec ça, on peut faire plein de choses ... 
+Comme en JavaScript 😉
+-->
 
 ---
 
-# Title
+## Utilisation de la fonction Go
 
----
+```javascript
+const go = new Go() // Go Wasm runtime
 
-# Title
+WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject) 
+  .then(result => { // Get the importObject from the go instance.
+    // execute `main`
+    go.run(result.instance)
+    // instance object contains 
+    // all the Exported WebAssembly functions	
+    Hello("Bob Morane")
+    //😃 Hello "Bob Morane
+  })
+  .catch(error => {
+    console.log("😡 ouch", error)
+  })
+```
+
+<!-- 
+Il est temps de voir quelques exemples
+-->
 
 ---
 ![bg](#000000)
@@ -285,7 +340,7 @@ WebAssembly.instantiateStreaming(fetch("main.wasm"))
 
 ---
 
-# Title
+# Facile ?
 
 ---
 

@@ -396,7 +396,7 @@ pub fn hello(s: String) -> String {
 cd hello
 wasm-pack build --release --target web
 ```
-
+> 🖐️ `--target web`
 ---
 
 <mark>Utiliser<mark>
@@ -469,12 +469,21 @@ wasm-pack build --release --target web
 # Title
 
 ---
-![bg](#3A84F2)
+![bg](#3217EF)
 ![fg](#FFFFFF)
+
+<style scoped>
+  mark {
+    background-color: #17EFE7;
+    color: #000000;
+  }
+</style>
 
 # Libérez, délivrez Wasm
 ## ... du navigateur (de la VM JS)
-### WASI
+# <mark>WASI</mark>
+https://wasi.dev/
+
 ---
 
 # Title

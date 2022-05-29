@@ -5,7 +5,8 @@
     // Configure properties specific to VS Code.
     "vscode": {
       // Add the IDs of extensions you want installed when the container is created.
-      "extensions": ["golang.go", "rust-lang.rust", "bungcip.better-toml"]
+      "extensions": ["golang.go", "rust-lang.rust", "bungcip.better-toml", "aaron-bond.better-comments"
+      ]
     }
   }
 }

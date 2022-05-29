@@ -325,7 +325,7 @@ Il est temps de voir quelques exemples
 ![fg](#FFFFFF)
 # Démos 🚀
 
-<a href="https://github.com/wasm-university/training/tree/main/01-go-ignition" target="_blank">01-go-ignition</a>
+<a href="https://github.com/wasm-university/training/tree/main/01-go-hello" target="_blank">01-go-hello</a>
 <a href="https://github.com/wasm-university/training/tree/main/02-go-dom" target="_blank">02-go-dom</a>
 <a href="https://github.com/wasm-university/training/tree/main/03-go-call-go-function" target="_blank">03-go-call-go-function</a>
 <a href="https://github.com/wasm-university/training/tree/main/04-go-return-json" target="_blank">04-go-return-json</a>
@@ -336,7 +336,11 @@ Il est temps de voir quelques exemples
 ---
 ![bg](#3AF1F2)
 ![fg](#000000)
-# 🦀 Wasm avec Rust dans le navigateur
+# Wasm avec Rust dans le navigateur
+
+## 🦀 + 🕸️ = 💖
+
+https://rustwasm.github.io/
 
 ---
 
@@ -344,15 +348,81 @@ Il est temps de voir quelques exemples
 
 ---
 
-# Title
+# Avec Wasm Bindgen, OUI ‼️
+
+https://github.com/rustwasm/wasm-bindgen
+> Facilitating high-level interactions between Wasm modules and JavaScript
 
 ---
 
-# Title
+#### Créer un projet "Rust Wasm"
+
+<mark>Créer un projet de type "library"</mark>
+
+```bash
+cargo new --lib hello
+```
+
+<mark>Mise à jour de `Cargo.toml`</mark>
+
+```toml
+[lib]
+name = "hello"
+path = "src/lib.rs"
+crate-type =["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2.50"
+```
 
 ---
 
-# Title
+<mark>Modifier `main.rs`<mark>
+
+```rust
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen]
+pub fn hello(s: String) -> String {
+  let r = String::from("👋 hello ");
+  
+  return r + &s;
+}
+```
+
+<mark>Compiler<mark>
+
+```bash
+cd hello
+wasm-pack build --release --target web
+```
+
+---
+
+<mark>Utiliser<mark>
+
+```html
+<script type="module">
+  import init, { hello } from './hello/pkg/hello.js'
+
+  async function run() {
+    await init()
+    console.log(hello("Bob")) 
+    console.log(hello("Jane")) 
+    console.log(hello("John")) 
+  }
+  run();
+</script>
+```
+
+---
+
+![bg](#000000)
+![fg](#FFFFFF)
+# Démos 🚀
+
+<a href="https://github.com/wasm-university/training/tree/main/08-rust-hello" target="_blank">08-rust-hello</a>
+
 
 ---
 

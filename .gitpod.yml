@@ -1,4 +1,4 @@
-image: k33g/wasm-university-training:0.0.1
+image: k33g/wasm-university-training:0.0.2
 
 tasks:
   - name: initialize
@@ -37,3 +37,5 @@ vscode:
     - pkief.material-icon-theme
     - rust-lang.rust
     - bungcip.better-toml
+    - aaron-bond.better-comments
+

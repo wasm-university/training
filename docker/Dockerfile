@@ -41,6 +41,11 @@ RUN git clone --depth=1 https://github.com/suborbital/sat.git && \
     cd .. && \
     rm -rf sat
 
+RUN wget https://github.com/fermyon/spin/releases/download/v0.2.0/spin-v0.2.0-linux-amd64.tar.gz && \
+    tar xfv spin-v0.2.0-linux-amd64.tar.gz && \
+    sudo cp spin /usr/local/bin/spin && \
+    rm spin; rm readme.md; rm LICENSE; rm spin-v0.2.0-linux-amd64.tar.gz
+
 # ------------------------------------
 # Install Dot.NEt Core Preview
 # ------------------------------------

@@ -422,6 +422,8 @@ wasm-pack build --release --target web
 # Démos 🚀
 
 <a href="https://github.com/wasm-university/training/tree/main/08-rust-hello" target="_blank">08-rust-hello</a>
+<a href="https://github.com/wasm-university/training/tree/main/09-rust-call-with-json" target="_blank">09-rust-call-with-json</a>
+<a href="https://github.com/wasm-university/training/tree/main/10-rust-dom" target="_blank">10-rust-dom</a>
 
 
 ---

@@ -1,11 +1,17 @@
 {
   "image": "k33g/wasm-university-training:0.0.2",
   "forwardPorts": [8080,3000,5000],
+  "postCreateCommand": "npm install",
   "customizations": {
     // Configure properties specific to VS Code.
     "vscode": {
       // Add the IDs of extensions you want installed when the container is created.
-      "extensions": ["golang.go", "rust-lang.rust", "bungcip.better-toml", "aaron-bond.better-comments"
+      "extensions": [
+        "golang.go", 
+        "rust-lang.rust", 
+        "bungcip.better-toml", 
+        "aaron-bond.better-comments",
+        "grain-lang.vscode-grain"
       ]
     }
   }

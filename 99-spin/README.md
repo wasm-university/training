@@ -1,21 +1,14 @@
+# Spin
 
+- https://spin.fermyon.dev/
 
-spin templates list
-spin templates install --git https://github.com/fermyon/spin
+## GoLang
 
-```
-+---------------------------------------------------+
-| Name         Description                          |
-+===================================================+
-| http-go      HTTP request handler using (Tiny)Go  |
-| http-rust    HTTP request handler using Rust      |
-| redis-go     Redis message handler using (Tiny)Go |
-| redis-rust   Redis message handler using Rust     |
-+---------------------------------------------------+
+```bash
+tinygo build -wasm-abi=generic -target=wasi -no-debug -o main.wasm main.go
+
+spin up --file spin.toml
+
+curl -i localhost:3000/hello
 ```
 
-mkdir hello
-cd hello
-spin new http-go --name hello --value variable=hello
-
-https://github.com/fermyon/spin/tree/main/examples/http-tinygo

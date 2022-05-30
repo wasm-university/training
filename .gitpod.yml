@@ -38,4 +38,5 @@ vscode:
     - rust-lang.rust
     - bungcip.better-toml
     - aaron-bond.better-comments
+    - grain-lang.vscode-grain
 

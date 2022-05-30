@@ -520,5 +520,7 @@ https://wasi.dev/
 # Références
 
 - https://wasmbyexample.dev
+- WASI: https://wasi.dev/
+- Fermyon: https://www.fermyon.com/
 
 ---

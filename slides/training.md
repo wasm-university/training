@@ -450,6 +450,12 @@ wasm-pack build --release --target web
 ![fg](#000000)
 # C'est comme pour le navigateur ... 😍
 
+🖐️ Attention, pour Rust :
+
+```bash
+wasm-pack build --release --target nodejs
+```
+
 ---
 
 ![bg](#000000)

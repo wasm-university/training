@@ -1,0 +1,12 @@
+{
+	"name": "hello",
+	"version": "1.0.0",
+	"author": "@k33g",
+	"license": "MIT",
+	"dependencies": {
+		"fastify": "^3.6.0"
+	},
+	"scripts": {
+		"start": "node index.js"
+	}
+}

@@ -63,13 +63,13 @@ https://github.com/wasm-university/training
 
 ---
 
-# Wasm Quoi/Pourquoi ?
+# 🚧🚧🚧 Wasm Quoi/Pourquoi ?
 > - prendre le schéma qui explique ce que c'est (+ajouter pourquoi)
 > - 
 
 ---
 
-# Histoire
+# 🚧🚧🚧 Histoire
 > - prendre le schéma qui explique ce que c'est
 > - 
 
@@ -88,7 +88,7 @@ Wasm file ~= container image, **smaller**, safer, without an OS
 
 ---
 
-# Hosts
+# 🚧🚧🚧 Hosts
 > - prendre le schéma qui explique ce que c'est
 > - 
 <!-- la portabilité de wasm dépend de l'hôte -->
@@ -180,7 +180,7 @@ Python          | Expérimental                    |                            
 
 ---
 
-### Mode de fonctionnement des démos Web
+### 🚧🚧🚧 Mode de fonctionnement des démos Web
 
 > refaire un schema avec index.html et tout le touin touin
 
@@ -427,48 +427,83 @@ wasm-pack build --release --target web
 
 
 ---
+<style scoped>
+  mark {
+    background-color: #EFD217;
+    color: #000000;
+  }
+  mark-green {
+    background-color: #12984E;
+    color: #000000;
+  }
+</style>
 
 ![bg](#3AF1F2)
 ![fg](#000000)
-# Wasm avec Go et NodeJS
+# Wasm & <mark-green>NodeJS</mark-green>
+
+## VM <mark>JavaScript</mark>
 
 ---
 
-# Title
+![bg](#18CA8B)
+![fg](#000000)
+# C'est comme pour le navigateur ... 😍
 
 ---
 
-# Title
+![bg](#000000)
+![fg](#FFFFFF)
+# Démos 🚀
+
+<a href="https://github.com/wasm-university/training/tree/main/11-nodejs-go-function" target="_blank">11-nodejs-go-function</a>
+<a href="https://github.com/wasm-university/training/tree/main/12-nodejs-rust-function" target="_blank">12-nodejs-rust-function</a>
 
 ---
-
-# Title
-
----
-
-# Title
-
----
-
 ![bg](#3AF1F2)
 ![fg](#000000)
-# 🦀 Wasm avec Rust et NodeJS
+
+# Cas d'utilisation
+### (Wasm dans le navigateur)
+---
+
+# Quelques applications
+
+- Jeux Vidéos
+- "Vraies" applications
+- Traitement d’image en local (dans le navigateur), OCR
+- Cartographie
+- Machine Learning
+- Chiffrement dans le navigateur
+- ...
 
 ---
 
-# Title
+### https://web.autocad.com
+
+![w:800](pictures/autocad.png)
 
 ---
 
-# Title
+#### https://beta.unity3d.com/jonas/AngryBots/
 
+![w:800](pictures/unity.png)
+
+<!--
+https://blog.unity.com/technology/webassembly-is-here
+-->
 ---
 
-# Title
+#### https://github.com/naptha/tesseract.js
 
+![w:800](pictures/tesseract.png)
+
+<!-- OCR ordonances Doctolib -->
 ---
 
-# Title
+# Plus besoin de l’AppStore ? 😬
+
+<!-- l'avenir nous le dira -->
 
 ---
 ![bg](#3217EF)
@@ -488,6 +523,149 @@ https://wasi.dev/
 
 ---
 
+<style scoped>
+  mark {
+    background-color: #17EFE7;
+    color: #000000;
+  }
+</style>
+
+### WASI: WebAssembly System Interface
+#### WebAssembly comme <mark>"Portable Runtime"</mark>
+
+WASI == Les fondations pour "sortir" Wasm du navigateur
+
+#### Sous-groupe de spécifications WebAssembly
+
+---
+
+<style scoped>
+  mark {
+    background-color: #17EFE7;
+    color: #000000;
+  }
+</style>
+
+### Comme la JVM (conceptuellement)
+#### mais en mieux ?
+
+- Sécurisé
+- Polyglotte
+- Rapide
+- <mark>Léger</mark>
+
+---
+
+<style scoped>
+  mark {
+    background-color: #F7C00E;
+    color: #000000;
+  }
+</style>
+
+### Un module WebAssembly <mark>ne peut pas</mark>
+
+- Accéder au système d’exploitation
+- Accéder à la mémoire que le host ne lui a pas donnée
+- Faire des requêtes sur le réseau
+- Lire ou écrire dans des fichiers
+
+
+---
+<style scoped>
+  mark {
+    background-color: #17EFE7;
+    color: #000000;
+  }
+</style>
+
+**WASI est une spécification pour pouvoir fournir un accès <mark>sécurisé et isolé</mark> au système sur lequel s’exécute <mark>l’hôte du module Wasm</mark>.**
+
+---
+
+# 🚧🚧🚧 Host Runtime
+
+- Ici refaire un schéma comme pour le slide 55
+
+---
+
+## Les projets de runtimes WASI
+
+- Pour exécuter du code Wasm à partir d’une CLI
+- Pour exécuter du code Wasm à partir d’un autre langage (Rust, Go, C/C++) >> SDK
+
+---
+
+## Les 3 les plus reconnus du moment :
+
+- **Wasmer**: https://wasmer.io/
+- **Wasmtime**: https://wasmtime.dev/
+- **WasmEdge**: https://wasmedge.org/
+---
+
+##### SDK WASI / Langage
+
+<style scoped>
+  mark {
+    background-color: #17EFE7;
+    color: #000000;
+  }
+  table {
+      height: 80%;
+      width: 100%;
+      font-size: 20px;
+      color: green;
+  }
+  th {
+      color: blue;
+  }
+</style>
+
+Langage             | WASMER                   | WASMEDGE (+arm)  | WASMTIME (+arm)
+:-------------------|:-------------------------|:-----------------|:--------
+  <mark>Rust</mark> |  x                       |  x               |  x
+  <mark>Go</mark>   |  x                       |  x               |  x
+  <mark>C</mark>    |  x                       |  x               |  x
+  C++               |  x                       |                  |
+  Python            |  x                       |  x               |  x
+  .Net              |  x (C#)                  |                  |  x
+  NodeJS            |  x                       |  x               |
+  Bash              |                          |                  |  x
+  Java              |  x                       |                  |  x (outside Bytecode Alliance)
+  Perl              |                          |                  |  x (outside Bytecode Alliance)
+  Zig               |  x (not published)       |                  |  x (outside Bytecode Alliance)
+  Ruby              |                          |                  |  x (outside Bytecode Alliance)
+> Wasmer supporte d'autres langages
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
 # Title
 
 ---
@@ -519,6 +697,24 @@ https://wasi.dev/
 # Title
 
 ---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+---
+
+# Title
+
+
+---
+
 # Références
 
 - https://wasmbyexample.dev

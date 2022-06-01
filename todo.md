@@ -8,3 +8,8 @@ Compared with Linux containers, WebAssembly could be 100x faster at startup, hav
 
 
 Application frameworks support WasmEdge as an embedded function or plug-in runtime. We will cover streaming data framework YoMo and Go function schedulder / framework Reactr.
+
+
+Faire une version anglaise
+
+En faire un projet OpenSource et l'ouvrir aux contributions

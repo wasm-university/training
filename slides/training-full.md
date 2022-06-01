@@ -609,7 +609,7 @@ WASI == Les fondations pour "sortir" Wasm du navigateur
 - **WasmEdge**: https://wasmedge.org/
 ---
 
-##### SDK WASI / Langage
+##### SDK WASI / Langage <mark>(<> CLI)</mark>
 
 <style scoped>
   mark {
@@ -627,32 +627,54 @@ WASI == Les fondations pour "sortir" Wasm du navigateur
   }
 </style>
 
-Langage             | WASMER                   | WASMEDGE (+arm)  | WASMTIME (+arm)
-:-------------------|:-------------------------|:-----------------|:--------
-  <mark>Rust</mark> |  x                       |  x               |  x
-  <mark>Go</mark>   |  x                       |  x               |  x
-  <mark>C</mark>    |  x                       |  x               |  x
-  C++               |  x                       |                  |
-  Python            |  x                       |  x               |  x
-  .Net              |  x (C#)                  |                  |  x
-  NodeJS            |  x                       |  x               |
-  Bash              |                          |                  |  x
-  Java              |  x                       |                  |  x (outside Bytecode Alliance)
-  Perl              |                          |                  |  x (outside Bytecode Alliance)
-  Zig               |  x (not published)       |                  |  x (outside Bytecode Alliance)
-  Ruby              |                          |                  |  x (outside Bytecode Alliance)
-> Wasmer supporte d'autres langages
+Langage             | WASMER                   | WASMEDGE (+arm)           | WASMTIME (+arm)
+:-------------------|:-------------------------|:--------------------------|:--------
+  <mark>Rust</mark> |  x                       |  x                        |  x
+  <mark>Go</mark>   |  x (<mark>TinyGo</mark>) |  x  (<mark>TinyGo</mark>) |  x (<mark>TinyGo</mark>)
+  <mark>C</mark>    |  x                       |  x                        |  x
+  C++               |  x                       |                           |
+  Python            |  x                       |  x                        |  x
+  Swift             |  x                       |  x                        |  ?
+  Grain             |                          |  x                        |  ?
+  .Net              |  x (C#)                  |                           |  x
+  NodeJS            |  x                       |  x                        |
+  Bash              |                          |                           |  x
+  Java              |  x                       |                           |  x (outside Bytecode Alliance)
+  Perl              |                          |                           |  x (outside Bytecode Alliance)
+  Zig               |  x (not published)       |                           |  x (outside Bytecode Alliance)
+  Ruby              |                          |                           |  x (outside Bytecode Alliance)
+> - Wasmer supporte d'autres langages
 ---
 
-# Title
+# Bytecode Alliance
+<style scoped>
+  mark {
+    background-color: #17EFE7;
+    color: #000000;
+  }
+</style>
+
+https://bytecodealliance.org/
+
+- WASM / WASI => les spécifications par le W3C, 
+- La Bytecode Alliance s’occupe de l’implémentation
+
+Avec Amazon, ARM, <mark>Cosmonic</mark>, Fastly, Google, Intel, <mark>Fermyon</mark>, <mark>Suborbital</mark>, Microsoft, Mozilla, Shopify, Siemens ...
 
 ---
 
-# Title
+![bg](#000000)
+![fg](#FFFFFF)
+# Démos 🚀
+## Les CLI des runtimes WASI
+<!-- 
+<a href="https://github.com/wasm-university/training/tree/main/11-nodejs-go-function" target="_blank">11-nodejs-go-function</a>
+<a href="https://github.com/wasm-university/training/tree/main/12-nodejs-rust-function" target="_blank">12-nodejs-rust-function</a>
+-->
 
 ---
 
-# Title
+# SDK
 
 ---
 

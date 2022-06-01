@@ -1,0 +1,14 @@
+[package]
+name = "hello"
+version = "0.1.0"
+edition = "2021"
+
+# ---
+[lib]
+name = "add"
+path = "src/lib.rs"
+crate-type =["cdylib"]
+# ---
+
+
+[dependencies]

@@ -48,11 +48,12 @@ https://github.com/wasm-university/training
 
 # Objectif(s)
 
-- Université “découverte” par l’exemple
+- Université "découverte" par l’exemple
 - Rien de complexe
 - Repartir avec le bagage nécessaire 🧳
 
-🖐️ Ne posez pas de questions compliquées 😛
+🖐️ Ne posez pas de questions compliquées 😛🙏
+https://github.com/wasm-university/training/issues
 
 ---
 

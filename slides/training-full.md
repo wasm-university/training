@@ -675,9 +675,11 @@ Avec Amazon, ARM, <mark>Cosmonic</mark>, Fastly, Google, Intel, <mark>Fermyon</m
 
 ---
 
-# SDK
+# Utiliser un SDK (WasmEdge)
 
 ## Faites votre propre "CLI Wasm" 🤓
+
+## Appeler des fonctions Wasm à partir de Go 🚀
 
 ---
 

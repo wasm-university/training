@@ -1,3 +1,3 @@
 #!/bin/bash
-go build
+go build -o wasmedge-cli
 ls -lh 

@@ -1,33 +1,37 @@
 package main
 
 import (
-  "os"
-  "github.com/second-state/WasmEdge-go/wasmedge"
+	"fmt"
+	"os"
+	"github.com/second-state/WasmEdge-go/wasmedge"
 )
 
-// go run main.go hello-app/hello.wasm 
-// go build
-// ./wasmedge-cli hello-app/hello.wasm 
 func main() {
-  /// Expected Args[0]: program name (./wasmedge-cli)
-  /// Expected Args[1]: wasm file (hello-app/hello.wasm)
-  wasmedge.SetLogErrorLevel()
+	/// Set not to print debug info
+	wasmedge.SetLogErrorLevel()
 
-  var conf = wasmedge.NewConfigure(wasmedge.REFERENCE_TYPES)
+	/// Create configure
+	var conf = wasmedge.NewConfigure(wasmedge.WASI)
 
-  conf.AddConfig(wasmedge.WASI)
+	/// Create VM with configure
+	var vm = wasmedge.NewVMWithConfig(conf)
 
-  var vm = wasmedge.NewVMWithConfig(conf)
+	/// Init WASI
+	var wasi = vm.GetImportModule(wasmedge.WASI)
+	wasi.InitWasi(
+		os.Args[1:],     /// The args
+		os.Environ(),    /// The envs
+		[]string{".:."}, /// The mapping preopens
+	)
 
-  var wasi = vm.GetImportObject(wasmedge.WASI)
-  wasi.InitWasi(
-    os.Args[1:],     /// The args
-    os.Environ(),    /// The envs
-    []string{".:."}, /// The mapping directories
-  )
-  
-  vm.RunWasmFile(os.Args[1], "_start") // 👋
+	/// Run WASM file
+	vm.RunWasmFile(os.Args[1], "_start")
 
-  vm.Release()
-  conf.Release()
+	exitcode := wasi.WasiGetExitCode()
+	if exitcode != 0 {
+		fmt.Println("Go: Run WASM failed, exit code:", exitcode)
+	}
+
+	vm.Release()
+	conf.Release()
 }

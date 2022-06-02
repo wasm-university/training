@@ -1,4 +1,4 @@
-image: k33g/wasm-university-training:0.0.3
+image: k33g/wasm-university-training:0.0.4
 
 tasks:
   - name: initialize
@@ -16,7 +16,10 @@ tasks:
       # ------------------------------------
       # wasmedge dependencies
       # ------------------------------------
+      source /home/gitpod/.wasmedge/env 
       wasmedge --version
+      go get github.com/second-state/WasmEdge-go/wasmedge@v0.10.0
+
 
     init: |
       echo "🚀 initialize"

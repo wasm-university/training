@@ -58,6 +58,7 @@ RUN rm dotnet-sdk-7.0.100-preview.4.22252.9-linux-x64.tar.gz
 # ------------------------------------
 # Install Wasi Runtimes
 # ------------------------------------
-RUN curl -sSf https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | bash && \
+#RUN curl -sSf https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | bash && \
+RUN curl -sSf https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | bash -s -- -v 0.10.0 && \
     curl https://get.wasmer.io -sSfL | sh && \
     curl https://wasmtime.dev/install.sh -sSf | bash

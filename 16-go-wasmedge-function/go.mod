@@ -1,4 +1,4 @@
-module github.com/wasm-university/training/16-go-wasmedge-function
+module github.com/wasm-university/training/16-go-wasmedge-function/function
 
 go 1.18
 

@@ -1,4 +1,4 @@
-# ebook go samples template
+# WasmEdge CLI
 
 Ref: https://wasmedge.org/book/en/embed/go.html
 

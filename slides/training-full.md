@@ -675,30 +675,41 @@ Avec Amazon, ARM, <mark>Cosmonic</mark>, Fastly, Google, Intel, <mark>Fermyon</m
 
 ---
 
-# Utiliser un SDK (WasmEdge)
+## Utiliser un SDK (WasmEdge)
 
-## Faites votre propre "CLI Wasm" 🤓
+#### Faites votre propre "CLI Wasm" 🤓
 
-## Appeler des fonctions Wasm à partir de Go 🚀
+#### Appeler des fonctions Wasm à partir de Go 🚀
+
+La documentation de WasmEdge est 💖
+https://wasmedge.org/book/en/embed/go.html
+https://github.com/second-state/WasmEdge-go-examples
 
 ---
 
-# Title
+![bg](#000000)
+![fg](#FFFFFF)
+# Démos 🚀
+## Utilisation du SDK WasmEdge
+
+<a href="https://github.com/wasm-university/training/tree/main/15-go-wasmedge-cli" target="_blank">15-go-wasmedge-cli</a>
+<a href="https://github.com/wasm-university/training/tree/main/16-go-wasmedge-function" target="_blank">16-go-wasmedge-function</a>
 
 <!-- montrer le code -->
----
-
-# Title
-
-<!-- montrer le code -->
 
 ---
+<style scoped>
+  mark {
+    background-color: #17EFE7;
+    color: #000000;
+  }
+</style>
+###  Ok, plutôt facile 😛
+### Mais comment je fais si je veux passer une <mark>String</mark> à ma fonction ?
 
-# Title
 
 ---
 
-# Title
 
 ---
 

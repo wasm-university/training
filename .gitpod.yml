@@ -18,13 +18,17 @@ tasks:
       # ------------------------------------
       source /home/gitpod/.wasmedge/env 
       wasmedge --version
+      #cd 15-go-wasmedge-cli/
       #go get github.com/second-state/WasmEdge-go/wasmedge@v0.10.0
 
 
     init: |
       echo "🚀 initialize"
       npm install
-      
+      export DOTNET_ROOT=$HOME/dotnet
+      export PATH=$PATH:$HOME/dotnet
+      #dotnet add package Wasi.Sdk --prerelease
+      dotnet --version
 
 ports:
   - port: 8080
@@ -42,4 +46,4 @@ vscode:
     - bungcip.better-toml
     - aaron-bond.better-comments
     - grain-lang.vscode-grain
-
+    - ms-dotnettools.vscode-dotnet-runtime

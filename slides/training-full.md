@@ -698,6 +698,37 @@ https://github.com/second-state/WasmEdge-go-examples
 <!-- montrer le code -->
 
 ---
+
+## Utiliser le WASI SDK pour .NET Core
+
+- Le **Wasi.Sdk** est expérimental
+- Il permet de compiler des projets .NET Core en Wasm
+- Il est aussi possible de faire des apps ASP.NET Core
+
+---
+
+```bash
+dotnet new console -o hello
+cd hello
+dotnet add package Wasi.Sdk --prerelease
+dotnet build
+```
+
+```bash
+wasmtime bin/Debug/net7.0/hello.wasm
+```
+
+---
+![bg](#000000)
+![fg](#FFFFFF)
+# Démos 🚀
+## Utilisation du SDK .Net
+
+<a href="https://github.com/wasm-university/training/tree/main/17-dotnet-wasi-cli-app" target="_blank">17-dotnet-wasi-cli-app</a>
+<a href="https://github.com/wasm-university/training/tree/main/16-go-wasmedge-function" target="_blank">16-go-wasmedge-function</a>
+
+<!-- montrer le code -->
+---
 <style scoped>
   mark {
     background-color: #17EFE7;
@@ -709,19 +740,58 @@ https://github.com/second-state/WasmEdge-go-examples
 
 
 ---
+![bg](#18CA8B)
+![fg](#000000)
+
+# Combattre les limitations
+# De WASI (et Wasm)
 
 
 ---
+<style scoped>
+  mark {
+    background-color: #17EFE7;
+    color: #000000;
+  }
+</style>
+# Des limitations
 
-# Title
+- **Système de type trop simple**
+  - <mark>Seulement 4 types numériques</mark> :
+    - Integers (32 & 64 bit) 
+    - Floats (32 & 64 bit)
+
+- **Mode d’exécution fermé du module Wasm**
+  - <mark>Pas d’accès à "l’extérieur"</mark> :
+    - Pas d’appel http
+    - Pas d’accès fichier
+    - ...
+
+---
+<style scoped>
+  mark {
+    background-color: #17EFE7;
+    color: #000000;
+  }
+</style>
+## Mais : à venir
+
+- **SIMD** : arallel computing
+- **Threads** comme les Web Workers, gérés par le host
+- **Exception Handling** : events + handler
+- **ECMAScript Module Integration** : `import {foo} from "./myModule.wasm"`
+- **Garbage Collection**
+- <mark><b>Interface Types</b></mark> : décrire des types de plus haut niveau, éviter les frictions
+
+https://hacks.mozilla.org/2019/08/webassembly-interface-types/
 
 ---
 
-# Title
+![bg](#3AF1F2)
+![fg](#000000)
 
----
-
-# Title
+# Comment contourner ces limitations
+### "the hard way"
 
 ---
 

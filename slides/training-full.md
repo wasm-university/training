@@ -830,7 +830,64 @@ https://hacks.mozilla.org/2019/08/webassembly-interface-types/
 
 ---
 
-# Title
+![bg](#F7C00E)
+![fg](#000000)
+
+# Passage de Strings à une fonction
+### Avec WasmEdge
+
+Pass complex parameters to Wasm functions:
+https://wasmedge.org/book/en/embed/go/memory.html 
+
+
+---
+
+# Inspiré d'un exemple 
+https://github.com/second-state/WasmEdge-go-examples/blob/master/go_MemoryGreet/greet_memory.go
+
+---
+![bg](#F1F9AE)
+
+<style scoped>
+ul {
+   font-size: 70%;
+}
+</style>
+
+> Faire un schéma
+
+- Charger le module Wasm (par l'hôte)
+- Copier la valeur de la string en mémoire
+- Appeler la fonction Wasm en lui passant 
+  - le nom de la fonction
+  - un pointeur sur la mémoire
+- Côté fonction
+  - Décoder le pointeur `Int32Ptr` en String  
+  - Exécuter la fonction (construire une nouvelle String)
+  - Transformer la nouvelle String en pointeur `BytePtr` pour la retourner à l'hôte
+- Côté hôte
+  - Transformer le résultat en String
+---
+![bg](#000000)
+![fg](#FFFFFF)
+# Démos 🚀
+## Passer une String à une fonction
+
+<a href="https://github.com/wasm-university/training/tree/main/19-go-wasmedge-strings" target="_blank">19-go-wasmedge-strings</a>
+
+<!-- montrer le code -->
+
+---
+
+![bg](#F7C00E)
+![fg](#000000)
+
+# Host Functions
+### Avec WasmEdge
+
+
+
+
 
 ---
 
@@ -844,21 +901,51 @@ https://hacks.mozilla.org/2019/08/webassembly-interface-types/
 
 # Title
 
----
-
-# Title
 
 ---
 
 # Title
 
----
-
-# Title
 
 ---
 
 # Title
+
+
+---
+
+# Title
+
+
+---
+
+# Title
+
+
+---
+
+# Title
+
+
+---
+
+# Title
+
+
+---
+
+# Title
+
+
+---
+
+# Title
+
+
+---
+
+# Title
+
 
 ---
 

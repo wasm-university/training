@@ -646,14 +646,14 @@ Langage             | WASMER                   | WASMEDGE (+arm)           | WAS
   Ruby              |                          |                           |  x (outside Bytecode Alliance)
 > - Wasmer supporte d'autres langages
 ---
-
-# Bytecode Alliance
 <style scoped>
   mark {
     background-color: #17EFE7;
     color: #000000;
   }
 </style>
+
+# Bytecode Alliance
 
 https://bytecodealliance.org/
 
@@ -706,6 +706,14 @@ https://github.com/second-state/WasmEdge-go-examples
 - Il est aussi possible de faire des apps ASP.NET Core
 
 ---
+<style scoped>
+  mark {
+    background-color: #17EFE7;
+    color: #000000;
+  }
+</style>
+
+### Application console
 
 ```bash
 dotnet new console -o hello
@@ -714,9 +722,36 @@ dotnet add package Wasi.Sdk --prerelease
 dotnet build
 ```
 
+<mark>16M bin/Debug/net7.0/hello.wasm</mark>
+
 ```bash
 wasmtime bin/Debug/net7.0/hello.wasm
 ```
+---
+<style scoped>
+  mark {
+    background-color: #17EFE7;
+    color: #000000;
+  }
+</style>
+
+### Application ASP.Net
+
+```bash
+dotnet new web -o hello
+cd hello
+dotnet add package Wasi.Sdk --prerelease
+dotnet add package Wasi.AspNetCore.Server.Native --prerelease
+dotnet build
+```
+
+<mark>31M bin/Debug/net7.0/hello.wasm</mark>
+
+```bash
+wasmtime bin/Debug/net7.0/hello.wasm --tcplisten localhost:8080
+```
+
+
 
 ---
 ![bg](#000000)
@@ -725,7 +760,7 @@ wasmtime bin/Debug/net7.0/hello.wasm
 ## Utilisation du SDK .Net
 
 <a href="https://github.com/wasm-university/training/tree/main/17-dotnet-wasi-cli-app" target="_blank">17-dotnet-wasi-cli-app</a>
-<a href="https://github.com/wasm-university/training/tree/main/16-go-wasmedge-function" target="_blank">16-go-wasmedge-function</a>
+<a href="https://github.com/wasm-university/training/tree/main/18-dotnet-wasi-asp" target="_blank">18-dotnet-wasi-asp</a>
 
 <!-- montrer le code -->
 ---

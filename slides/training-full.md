@@ -751,8 +751,6 @@ dotnet build
 wasmtime bin/Debug/net7.0/hello.wasm --tcplisten localhost:8080
 ```
 
-
-
 ---
 ![bg](#000000)
 ![fg](#FFFFFF)
@@ -775,8 +773,8 @@ wasmtime bin/Debug/net7.0/hello.wasm --tcplisten localhost:8080
 
 
 ---
-![bg](#18CA8B)
-![fg](#000000)
+![bg](#1A8B6E)
+![fg](#FFFFFF)
 
 # Combattre les limitations
 # De WASI (et Wasm)
@@ -854,7 +852,7 @@ ul {
 }
 </style>
 
-> Faire un schéma
+> 👋 Faire un schéma
 
 - Charger le module Wasm (par l'hôte)
 - Copier la valeur de la string en mémoire
@@ -870,7 +868,7 @@ ul {
 ---
 ![bg](#000000)
 ![fg](#FFFFFF)
-# Démos 🚀
+# Démo 🚀
 ## Passer une String à une fonction
 
 <a href="https://github.com/wasm-university/training/tree/main/19-go-wasmedge-strings" target="_blank">19-go-wasmedge-strings</a>
@@ -884,8 +882,121 @@ ul {
 
 # Host Functions
 ### Avec WasmEdge
+#### 🖐️ on ne peut pas faire un fetch à partir d'un module wasm
+
+https://wasmedge.org/book/en/extend/plugin/hostfunction.html#host-functions 
+
+---
+
+# Inspiré d'un exemple 
+
+https://github.com/second-state/WasmEdge-go-examples/blob/master/go_HostFunc/hostfunc.go
+
+Ça pique un peu ... 😢
 
 
+---
+
+# Refaire le schéma du Slide 73
+
+---
+![bg](#F1F9AE)
+
+<style scoped>
+ul {
+   font-size: 100%;
+}
+</style>
+
+### Comment ça marche
+
+- Utiliser les fonctions hôtes d’un programme Go à partir d’un module wasm Rust
+
+- Côté host : 
+  - Ecrire 2 hosts functions `fetch` & `writeMem`
+  - Définir 2 nouveaux `FunctionType`
+  - Les ajouter au module wasm
+  - Lancer le tout 🚀
+
+---
+![bg](#F1F9AE)
+
+<style scoped>
+ul {
+   font-size: 100%;
+}
+</style>
+
+### Comment ça marche
+
+- Côté module wasm : 
+  - Référencer les fonctions
+  ```rust
+  extern "C" {
+    fn fetch(url_pointer: *const u8, url_length: i32) -> i32;
+    fn write_mem(pointer: *const u8);
+  }
+  ``` 
+  - Et les utiliser
+
+---
+
+![bg](#000000)
+![fg](#FFFFFF)
+# Démo 🚀
+## Host functions
+
+<a href="https://github.com/wasm-university/training/tree/main/20-go-rust-host-function" target="_blank">20-go-rust-host-function</a>
+
+<!-- montrer le code -->
+
+---
+
+![bg](#3AF1F2)
+![fg](#000000)
+
+# Comment contourner ces limitations
+### "the soft 🤗 way"
+
+---
+
+# Reactr
+## Suborbital
+### un SDK au dessus des SDK
+
+
+---
+
+# Title
+
+
+---
+
+# Title
+
+
+---
+
+# Title
+
+
+---
+
+# Title
+
+
+---
+
+# Title
+
+
+---
+
+![bg](#1A8B6E)
+![fg](#FFFFFF)
+
+# MicroServices, FaaS, ...
+# Avec WebAssembly
 
 
 
@@ -893,18 +1004,11 @@ ul {
 
 # Title
 
----
-
-# Title
 
 ---
 
 # Title
 
-
----
-
-# Title
 
 
 ---
@@ -925,33 +1029,6 @@ ul {
 ---
 
 # Title
-
-
----
-
-# Title
-
-
----
-
-# Title
-
-
----
-
-# Title
-
-
----
-
-# Title
-
-
----
-
-# Title
-
-
 ---
 
 # Références

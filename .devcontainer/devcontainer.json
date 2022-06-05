@@ -8,10 +8,12 @@
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
         "golang.go", 
+        "pkief.material-icon-theme",
         "rust-lang.rust", 
         "bungcip.better-toml", 
         "aaron-bond.better-comments",
-        "grain-lang.vscode-grain"
+        "grain-lang.vscode-grain",
+        "ms-dotnettools.vscode-dotnet-runtime"
       ]
     }
   }

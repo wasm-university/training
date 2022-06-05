@@ -1,2 +1,4 @@
 21-go-sat
 *.wasm
+hello/target
+hello/vendor

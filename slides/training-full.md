@@ -960,24 +960,24 @@ ul {
 
 ---
 
-# Reactr
+# Sat
 ## Suborbital
-### un SDK au dessus des SDK
+### un SDK (?) au dessus des SDK
+
+<!-- ajouter le logo -->
+---
+
+# Runnable(s)
+<!-- polyglotes -->
+
+---
+
+# Subo
 
 
 ---
 
-# Title
-
-
----
-
-# Title
-
-
----
-
-# Title
+# Sat
 
 
 ---

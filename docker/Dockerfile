@@ -78,6 +78,6 @@ RUN brew install nats-server
 # Install and start the wasmCloud host runtime
 
 RUN wget https://github.com/wasmCloud/wasmcloud-otp/releases/download/v0.54.6/x86_64-linux.tar.gz && \
-    sudo mkdir -p /workspace/wasmcloud && \
-    sudo tar -xvf x86_64-linux.tar.gz -C /workspace/wasmcloud && \
+    sudo mkdir -p $HOME/wasmcloud && \
+    sudo tar -xvf x86_64-linux.tar.gz -C $HOME/wasmcloud && \
     rm x86_64-linux.tar.gz

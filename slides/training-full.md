@@ -964,42 +964,152 @@ ul {
 ## Suborbital
 ### un SDK (?) au dessus des SDK
 
-<!-- ajouter le logo -->
+https://suborbital.dev/
+<!-- ajouter le logo 
+https://github.com/suborbital/sat/issues/122
+-->
 ---
 
-# Runnable(s)
+> Faire un schéma
+
+---
+
+### Runnable(s)
 <!-- polyglotes -->
+`subo create runnable hello`
+```rust
+use suborbital::runnable::*;
+
+struct Hello{}
+
+impl Runnable for Hello {
+  fn run(&self, input: Vec<u8>) -> Result<Vec<u8>, RunErr> {
+    let in_string = String::from_utf8(input).unwrap();
+
+    Ok(String::from(format!("hello {}", in_string)).as_bytes().to_vec())
+  }
+}
+```
 
 ---
 
-# Subo
+### Runnable(s) polyglottes
+`subo create runnable hey --lang tinygo`
+```go
+package main
+
+import (
+	"github.com/suborbital/reactr/api/tinygo/runnable" 
+)
+
+type Hey struct{}
+
+func (h Hey) Run(input []byte) ([]byte, error) {
+	return []byte("Hello, " + string(input)), nil
+}
+```
+
+---
+
+### Runnable(s) polyglottes
+Go, Rust, mais aussi:
+- AssemblyScript
+- Swift (lent)
+- Grain 😍
+- JavaScript https://github.com/Shopify/javy
+- TypeScript https://github.com/Shopify/javy
+
+https://blog.suborbital.dev/bringing-javascript-and-typescript-to-suborbital
+
+<!--
+Introduction: Run your JavaScript on WebAssembly. Javy takes your JavaScript code, and executes it in a WebAssembly embedded JavaScript runtime.
+-->
+---
+
+## Subo (toolchain)
+
+```bash
+subo create runnable hola --lang assemblyscript
+cd hola
+subo build .
+```
+
+---
+<style scoped>
+  mark {
+    background-color: #17EFE7;
+    color: #000000;
+  }
+</style>
+
+### Sat (sdk mais pas que)
+Embarquer du <mark>wasm</mark> dans vos applications <mark>Go</mark>
+
+```go
+wasmModuleConfig, _ := sat.ConfigFromRunnableArg("hello.wasm")
+satFunction, _ := sat.New(wasmModuleConfig, nil)
+
+result, err := satFunction.Exec([]byte("Bob"))
+if err != nil {
+  log.Fatal(err)
+}
+
+fmt.Println("🎉 " + string(result.Output))
+```
+
+---
+<style scoped>
+  mark {
+    background-color: #F7C00E;
+    color: #000000;
+  }
+</style>
+
+![bg](#000000)
+![fg](#FFFFFF)
+# Démo(s) 🚀
+### Une CLI "facile" avec Sat
+#### <mark>Strings & Host Functions</mark>
+
+<a href="https://github.com/wasm-university/training/tree/main/21-go-sat" target="_blank">21-go-sat</a>
+
+---
+<style scoped>
+  mark {
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+</style>
+![bg](#FFC300 )
+# Perspectives (Wasi & SDK)
+
+- Write once, run anywhere (encore un peu de travail)
+  - Runtimes multi-plateformes
+- Applications (CLI ou autre) avec plugins wasm
+- "Lanceurs/Serveurs" de modules wasm
+  - <mark>**Sécurité** 🖐️</mark>
+  - Activation/Ajout de fonctionnalités
+  - Bots, Hooks, FaaS, UDF, ...
 
 
 ---
-
-# Sat
-
-
----
-
-# Title
-
-
----
-
-# Title
-
-
----
+<style scoped>
+  mark {
+    color: #44F099;
+  }
+</style>
 
 ![bg](#1A8B6E)
 ![fg](#FFFFFF)
 
 # MicroServices, FaaS, ...
-# Avec WebAssembly
+### <mark>Avec WebAssembly</mark>
 
 
-
+<!--
+- Utiliser d'autres langages (ex Grain)
+- Parler des tests de charges
+-->
 ---
 
 # Title
@@ -1018,7 +1128,17 @@ ul {
 
 ---
 
-# Title
+<style scoped>
+  mark {
+    color: #44F099;
+  }
+</style>
+
+![bg](#1A8B6E)
+![fg](#FFFFFF)
+
+# Et après ?
+### <mark>Le futur de WebAssembly</mark> 👀
 
 
 ---

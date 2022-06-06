@@ -1142,8 +1142,24 @@ fmt.Println("🎉 " + string(result.Output))
 
 
 ---
-
-# Title
+<style scoped>
+ul {
+   font-size: 70%;
+}
+</style>
+##### À suivre https://github.com/WebAssembly
+*Juin 2022 :*
+- https://github.com/WebAssembly/component-model
+  - amélioration intégration host
+  - activité (GitHub Insights) en début d'année et un peu récemment
+- https://github.com/WebAssembly/interface-types 
+  - reporté dans component-model
+- https://github.com/WebAssembly/exception-handling 
+  - grosse activité en début d'année
+- https://github.com/WebAssembly/debugging
+  - 💀 😢
+- https://github.com/WebAssembly/wasi-filesystem
+  - un peu d'activité récemment
 
 
 ---

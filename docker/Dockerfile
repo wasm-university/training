@@ -63,3 +63,22 @@ RUN rm dotnet-sdk-7.0.100-preview.4.22252.9-linux-x64.tar.gz
 RUN curl -sSf https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | bash -s -- -v 0.10.0 && \
     curl https://get.wasmer.io -sSfL | sh && \
     curl https://wasmtime.dev/install.sh -sSf | bash
+
+# ------------------------------------
+# WasmCloud (Cosmonic)
+# ------------------------------------
+# Install wash
+
+RUN curl -s https://packagecloud.io/install/repositories/wasmcloud/core/script.deb.sh | sudo bash && \
+    sudo apt install wash
+
+# Install NATS server
+RUN brew install nats-server
+
+# Install and start the wasmCloud host runtime
+
+RUN wget https://github.com/wasmCloud/wasmcloud-otp/releases/download/v0.54.6/x86_64-linux.tar.gz && \
+    mkdir -p wasmcloud && \
+    tar -xvf x86_64-linux.tar.gz -C wasmcloud && \
+    rm x86_64-linux.tar.gz
+

@@ -1,4 +1,4 @@
-image: k33g/wasm-university-training:0.0.5
+image: k33g/wasm-university-training:0.0.6
 
 tasks:
   - name: initialize

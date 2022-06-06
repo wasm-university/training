@@ -1163,11 +1163,21 @@ ul {
 
 
 ---
+<style scoped>
+  mark {
+    color: #44F099;
+  }
+</style>
 
-# Title
+![bg](#1A8B6E)
+![fg](#FFFFFF)
+
+# Merci 😃
+
+## <mark>Questions ?<mark>
 ---
 
-# Références
+# Références 🚧
 
 - https://wasmbyexample.dev
 - WASI: https://wasi.dev/

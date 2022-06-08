@@ -43,6 +43,21 @@ RUN git clone --depth=1 https://github.com/suborbital/sat.git && \
     cd .. && \
     rm -rf sat
 
+
+# ------------------------------------
+# Install Wagi (Deislab)
+# ------------------------------------
+RUN mkdir tmp-wagi && \
+    cd tmp-wagi && \
+    wget https://github.com/deislabs/wagi/releases/download/v0.8.1/wagi-v0.8.1-linux-amd64.tar.gz && \
+    tar -zxf wagi-v0.8.1-linux-amd64.tar.gz && \
+    sudo cp wagi /usr/local/bin/wagi && \
+    cd .. && \
+    rm -rf tmp-wagi
+
+# ------------------------------------
+# Install Spin (Fermyon)
+# ------------------------------------
 RUN wget https://github.com/fermyon/spin/releases/download/v0.2.0/spin-v0.2.0-linux-amd64.tar.gz && \
     tar xfv spin-v0.2.0-linux-amd64.tar.gz && \
     sudo cp spin /usr/local/bin/spin && \
@@ -75,7 +90,7 @@ RUN curl -s https://packagecloud.io/install/repositories/wasmcloud/core/script.d
 # Install NATS server
 RUN brew install nats-server
 
-# Install and start the wasmCloud host runtime
+# Install the wasmCloud host runtime
 
 RUN wget https://github.com/wasmCloud/wasmcloud-otp/releases/download/v0.54.6/x86_64-linux.tar.gz && \
     sudo mkdir -p $HOME/wasmcloud && \

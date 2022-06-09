@@ -508,6 +508,15 @@ https://blog.unity.com/technology/webassembly-is-here
 <!-- OCR ordonances Doctolib -->
 ---
 
+# Webcontainers
+
+https://blog.stackblitz.com/posts/introducing-webcontainers/
+https://github.com/stackblitz/webcontainer-core
+https://stackblitz.com/edit/node-merzas?file=package.json,index.js
+👋 à tester avec l'iPad et le mettre dans le slide suivant
+
+---
+
 # Plus besoin de l’AppStore ? 😬
 
 <!-- l'avenir nous le dira -->

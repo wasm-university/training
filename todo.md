@@ -13,3 +13,5 @@ Application frameworks support WasmEdge as an embedded function or plug-in runti
 Faire une version anglaise
 
 En faire un projet OpenSource et l'ouvrir aux contributions
+
+AU DEMARRAGE: lancer subo et charger les toolchain

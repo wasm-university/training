@@ -5,6 +5,7 @@
     "rust-lang.rust",
     "bungcip.better-toml",
     "aaron-bond.better-comments",
-    "ms-dotnettools.vscode-dotnet-runtime"
+    "ms-dotnettools.vscode-dotnet-runtime",
+    "grain-lang.vscode-grain"
   ]
 }

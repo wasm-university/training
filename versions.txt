@@ -1,0 +1,4 @@
+go version go1.18.3 linux/amd64
+tinygo version 0.23.0 linux/amd64 (using go version go1.18.3 and LLVM version 14.0.0)
+rustc 1.61.0 (fe5b13d68 2022-05-18)
+Subo CLI v0.5.2

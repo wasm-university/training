@@ -21,6 +21,12 @@ tasks:
       #cd 15-go-wasmedge-cli/
       #go get github.com/second-state/WasmEdge-go/wasmedge@v0.10.0
 
+      #echo "" >> $HOME/.bashrc
+      #echo 'export PATH="/workspace/training/24-sat/hello/_lib:$PATH"' >> $HOME/.bashrc
+      #echo "" >> $HOME/.bashrc
+      #echo 'export PATH="/workspace/training/24-sat/hello/_lib/suborbital:$PATH"' >> $HOME/.bashrc
+      #source ~/.bashrc
+      
 
     init: |
       echo "🚀 initialize"

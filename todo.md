@@ -15,3 +15,5 @@ Faire une version anglaise
 En faire un projet OpenSource et l'ouvrir aux contributions
 
 AU DEMARRAGE: lancer subo et charger les toolchain
+
+Faire des test de charge entre sat , wagi et spin

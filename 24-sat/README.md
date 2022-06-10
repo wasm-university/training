@@ -14,8 +14,6 @@ subo build hello
 
 SAT_HTTP_PORT=8080 sat ./hello/hello.wasm 
 
-curl -d "Bob Morane" \
-  -X POST "http://localhost:8080" \
-  ;echo ""
+curl -d "Bob Morane" http://localhost:8080; echo ""
 
 ```

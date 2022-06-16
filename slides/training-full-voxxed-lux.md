@@ -64,15 +64,16 @@ https://github.com/wasm-university/training/issues
 
 ---
 
-# 🚧🚧🚧 Wasm Quoi/Pourquoi ?
-> - prendre le schéma qui explique ce que c'est (+ajouter pourquoi)
-> - 
+###### Wasm Quoi/Pourquoi ?
+
+![w:900](pictures/wasm-01.jpeg)
+
 
 ---
 
-# 🚧🚧🚧 Histoire
-> - prendre le schéma qui explique ce que c'est
-> - 
+###### Histoire
+
+![w:900](pictures/wasm-02.jpeg)
 
 ---
 
@@ -89,9 +90,11 @@ Wasm file ~= container image, **smaller**, safer, without an OS
 
 ---
 
-# 🚧🚧🚧 Hosts
-> - prendre le schéma qui explique ce que c'est
-> - 
+###### Hosts
+
+![w:900](pictures/wasm-03.jpeg)
+
+
 <!-- la portabilité de wasm dépend de l'hôte -->
 
 ---
@@ -181,15 +184,10 @@ Python          | Expérimental                    |                            
 
 ---
 
-### 🚧🚧🚧 Mode de fonctionnement des démos Web
-
-> refaire un schema avec index.html et tout le touin touin
-
----
-
 ![bg](#3AF1F2)
 ![fg](#000000)
 
+### Avant de faire du Go
 # 1er module Wasm en C
 
 ---
@@ -254,6 +252,13 @@ WebAssembly.instantiateStreaming(fetch("main.wasm"))
 ![bg](#3AF1F2)
 ![fg](#000000)
 # Wasm avec Go dans le navigateur
+
+---
+
+###### Mode de fonctionnement des démos Web (avec Go)
+
+![w:800](pictures/wasm-04.jpeg)
+
 
 ---
 
@@ -513,7 +518,6 @@ https://blog.unity.com/technology/webassembly-is-here
 https://blog.stackblitz.com/posts/introducing-webcontainers/
 https://github.com/stackblitz/webcontainer-core
 https://stackblitz.com/edit/node-merzas?file=package.json,index.js
-👋 à tester avec l'iPad et le mettre dans le slide suivant
 
 ---
 
@@ -599,9 +603,10 @@ WASI == Les fondations pour "sortir" Wasm du navigateur
 
 ---
 
-# 🚧🚧🚧 Host Runtime
+###### Host Runtime
 
-- Ici refaire un schéma comme pour le slide 55
+![w:900](pictures/wasm-05.jpeg)
+
 
 ---
 
@@ -818,7 +823,7 @@ wasmtime bin/Debug/net7.0/hello.wasm --tcplisten localhost:8080
 </style>
 ## Mais : à venir
 
-- **SIMD** : arallel computing
+- **SIMD** : parallel computing
 - **Threads** comme les Web Workers, gérés par le host
 - **Exception Handling** : events + handler
 - **ECMAScript Module Integration** : `import {foo} from "./myModule.wasm"`
@@ -861,7 +866,7 @@ ul {
 }
 </style>
 
-> 👋 Faire un schéma
+> 👋 fonctionnement
 
 - Charger le module Wasm (par l'hôte)
 - Copier la valeur de la string en mémoire
@@ -906,7 +911,10 @@ https://github.com/second-state/WasmEdge-go-examples/blob/master/go_HostFunc/hos
 
 ---
 
-# Refaire le schéma du Slide 73
+###### Principe
+
+![w:900](pictures/wasm-06.jpeg)
+
 
 ---
 ![bg](#F1F9AE)
@@ -973,13 +981,17 @@ ul {
 ## Suborbital
 ### un SDK (?) au dessus des SDK
 
+![w:400](pictures/suborbital.png)
+
+
 https://suborbital.dev/
-<!-- ajouter le logo 
+<!--
 https://github.com/suborbital/sat/issues/122
 -->
 ---
 
-> Faire un schéma
+![w:900](pictures/wasm-07.jpeg)
+
 
 ---
 
@@ -1130,8 +1142,8 @@ https://deislabs.io/
 
 ---
 
-# Wagi
-> utiliser schema
+![w:900](pictures/wasm-08.jpeg)
+
 
 ---
 
@@ -1211,7 +1223,8 @@ Pas uniquement une librairie, mais aussi un serveur http
 
 ---
 
-> utiliser schema / améliorer la démo
+![w:900](pictures/wasm-09.jpeg)
+
 
 ---
 

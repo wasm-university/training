@@ -1,2 +1,2 @@
-*.wasm
-wasmedge-cli
+#*.wasm
+#wasmedge-cli

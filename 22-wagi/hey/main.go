@@ -13,12 +13,14 @@ func main() {
 	args := os.Args
 	argsWithoutCaller := os.Args[1:]
 
+  fmt.Print("Route and QueryString:")
 	fmt.Println(args)
 	fmt.Println(argsWithoutCaller)
 
 	var reader = bufio.NewReader(os.Stdin)
 	message, _ := reader.ReadString('\n')
 
-	fmt.Println(message)
+  // POST
+	fmt.Println("POST:" + message)
 
 }

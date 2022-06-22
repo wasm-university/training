@@ -13,7 +13,7 @@
 					console.log("👋 main.wasm is loaded")
 					console.log("📦 Instance", instance)
 
-          const value = instance.exports.power(2, 2)
+          const value = instance.exports.power(5, 2)
 
 					console.log(`🤖 value: ${value}`)
 					console.log(`👋 greet: ${instance.exports.greet()} (location of the value)`) // 🖐️ this is the location of the value
@@ -24,13 +24,13 @@
             - transform the buffer to string
           */
 
-          /*
+
 					const greetValue = instance.exports.greet();
 					const memory = instance.exports.memory;
 					const buffer = new Uint8Array(memory.buffer, greetValue, 12);
 					const str = new TextDecoder("utf8").decode(buffer);
 					console.log(`📝: ${str}`)
-          */
+    
 
 				})
 				.catch(error => {

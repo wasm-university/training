@@ -63,8 +63,9 @@ dotnet add package Wasi.AspNetCore.Server.Native --prerelease
 dotnet build
 ```
 
-> rub
+> run
 ```bash
+cd hello
 wasmtime bin/Debug/net7.0/hello.wasm --tcplisten localhost:8080
 ```
 

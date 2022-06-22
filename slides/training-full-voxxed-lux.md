@@ -27,6 +27,7 @@ https://github.com/wasm-university/training
 #### Philippe Charrière
 
 - TAM @GitLab
+- 🤖 Bots.Garden
 - 🦊 @k33g
 - 🐦 @k33g_org
 - 🍊🦸Gitpod Hero
@@ -119,11 +120,11 @@ Wasm file ~= container image, **smaller**, safer, without an OS
 
 ---
 
-### 📣 La Communication Wasm <=> Host  n’est pas triviale  
+### 📣 La Communication Wasm <=> Host  n’est pas triviale
 > (trop bas niveau ?)
-  
-#### 4 types de données pour les paramètres: 
-  
+
+#### 4 types de données pour les paramètres:
+
   - 32 & 64 Bit Integer
   - 32 & 64 Bit Floating-Point Number
 
@@ -159,7 +160,7 @@ th {
 Langage         | WASM (VM JS)                    | WASI                                     | Remarks
 :---------------|:--------------------------------|:-----------------------------------------|:--------
 C/C++           | EMScripten, LLVM (clang)        | LLVM, SDK C/C++ Wasmer                   |
-Rust            | Wasm-pack + wasm-bindgen (glue) | rustup target add wasm32-wasi            | support navigateur 💖    
+Rust            | Wasm-pack + wasm-bindgen (glue) | rustup target add wasm32-wasi            | support navigateur 💖
 Go              | Intégré à la toolchain standard | Non ou alors utiliser TinyGo             | support navigateur 💖
 Assemblyscript  | Intégré                         | Intégré                                  | Ne cible que du WASM
 Swift           | SwiftWasm                       | SwiftWasm                                |
@@ -196,7 +197,7 @@ Python          | Expérimental                    |                            
 ```c
 #define WASM_EXPORT __attribute__((visibility("default")))
 
-WASM_EXPORT 
+WASM_EXPORT
 float power(float number, int pow) {
  float res = number;
    for (int i = 0;i < pow - 1; i++) {
@@ -205,7 +206,7 @@ float power(float number, int pow) {
  return res;
 }
 
-WASM_EXPORT 
+WASM_EXPORT
 char* greet()
 {
     static char str[12] = "hello world!";
@@ -225,10 +226,10 @@ clang --target=wasm32 \
 
 `index.html`
 ```javascript
-WebAssembly.instantiateStreaming(fetch("main.wasm")) 
+WebAssembly.instantiateStreaming(fetch("main.wasm"))
   .then(({ instance }) => {
     console.log("👋 main.wasm is loaded")
-    
+
     const value = instance.exports.power(2, 2)
 
     console.log(`🤖 value: ${value}`)
@@ -278,11 +279,11 @@ cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" .
 ```html
 <script src="wasm_exec.js"></script>
 ```
- 
+
  > Disclaimer, I 💛 <mark>**JavaScript**</mark>
 ---
 
-## Fonctions en Go: 
+## Fonctions en Go:
 `[]js.Value` <mark>&</mark> `interface{}`
 
 ```go
@@ -296,8 +297,8 @@ func Hello(this js.Value, args []js.Value) interface{} {
 js.Global().Set("Hello", js.FuncOf(Hello))
 ```
 
-<!-- 
-Et avec ça, on peut faire plein de choses ... 
+<!--
+Et avec ça, on peut faire plein de choses ...
 Comme en JavaScript 😉
 -->
 
@@ -308,12 +309,12 @@ Comme en JavaScript 😉
 ```javascript
 const go = new Go() // Go Wasm runtime
 
-WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject) 
+WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject)
   .then(result => { // Get the importObject from the go instance.
     // execute `main`
     go.run(result.instance)
-    // instance object contains 
-    // all the Exported WebAssembly functions	
+    // instance object contains
+    // all the Exported WebAssembly functions
     Hello("Bob Morane")
     //😃 Hello "Bob Morane
   })
@@ -322,7 +323,7 @@ WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject)
   })
 ```
 
-<!-- 
+<!--
 Il est temps de voir quelques exemples
 -->
 
@@ -391,7 +392,7 @@ use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
 pub fn hello(s: String) -> String {
   let r = String::from("👋 hello ");
-  
+
   return r + &s;
 }
 ```
@@ -413,9 +414,9 @@ wasm-pack build --release --target web
 
   async function run() {
     await init()
-    console.log(hello("Bob")) 
-    console.log(hello("Jane")) 
-    console.log(hello("John")) 
+    console.log(hello("Bob"))
+    console.log(hello("Jane"))
+    console.log(hello("John"))
   }
   run();
 </script>
@@ -671,7 +672,7 @@ Langage             | WASMER                   | WASMEDGE (+arm)           | WAS
 
 https://bytecodealliance.org/
 
-- WASM / WASI => les spécifications par le W3C, 
+- WASM / WASI => les spécifications par le W3C,
 - La Bytecode Alliance s’occupe de l’implémentation
 
 Avec Amazon, ARM, <mark>Cosmonic</mark>, Fastly, Google, Intel, <mark>Fermyon</mark>, <mark>Suborbital</mark>, Microsoft, Mozilla, Shopify, Siemens ...
@@ -805,7 +806,7 @@ wasmtime bin/Debug/net7.0/hello.wasm --tcplisten localhost:8080
 
 - **Système de type trop simple**
   - <mark>Seulement 4 types numériques</mark> :
-    - Integers (32 & 64 bit) 
+    - Integers (32 & 64 bit)
     - Floats (32 & 64 bit)
 
 - **Mode d’exécution fermé du module Wasm**
@@ -849,12 +850,12 @@ https://hacks.mozilla.org/2019/08/webassembly-interface-types/
 ### Avec WasmEdge
 
 Pass complex parameters to Wasm functions:
-https://wasmedge.org/book/en/embed/go/memory.html 
+https://wasmedge.org/book/en/embed/go/memory.html
 
 
 ---
 
-# Inspiré d'un exemple 
+# Inspiré d'un exemple
 https://github.com/second-state/WasmEdge-go-examples/blob/master/go_MemoryGreet/greet_memory.go
 
 ---
@@ -870,11 +871,11 @@ ul {
 
 - Charger le module Wasm (par l'hôte)
 - Copier la valeur de la string en mémoire
-- Appeler la fonction Wasm en lui passant 
+- Appeler la fonction Wasm en lui passant
   - le nom de la fonction
   - un pointeur sur la mémoire
 - Côté fonction
-  - Décoder le pointeur `Int32Ptr` en String  
+  - Décoder le pointeur `Int32Ptr` en String
   - Exécuter la fonction (construire une nouvelle String)
   - Transformer la nouvelle String en pointeur `BytePtr` pour la retourner à l'hôte
 - Côté hôte
@@ -898,11 +899,11 @@ ul {
 ### Avec WasmEdge
 #### 🖐️ on ne peut pas faire un fetch à partir d'un module wasm
 
-https://wasmedge.org/book/en/extend/plugin/hostfunction.html#host-functions 
+https://wasmedge.org/book/en/extend/plugin/hostfunction.html#host-functions
 
 ---
 
-# Inspiré d'un exemple 
+# Inspiré d'un exemple
 
 https://github.com/second-state/WasmEdge-go-examples/blob/master/go_HostFunc/hostfunc.go
 
@@ -929,7 +930,7 @@ ul {
 
 - Utiliser les fonctions hôtes d’un programme Go à partir d’un module wasm Rust
 
-- Côté host : 
+- Côté host :
   - Ecrire 2 hosts functions `fetch` & `writeMem`
   - Définir 2 nouveaux `FunctionType`
   - Les ajouter au module wasm
@@ -946,14 +947,14 @@ ul {
 
 ### Comment ça marche
 
-- Côté module wasm : 
+- Côté module wasm :
   - Référencer les fonctions
   ```rust
   extern "C" {
     fn fetch(url_pointer: *const u8, url_length: i32) -> i32;
     fn write_mem(pointer: *const u8);
   }
-  ``` 
+  ```
   - Et les utiliser
 
 ---
@@ -1020,7 +1021,7 @@ impl Runnable for Hello {
 package main
 
 import (
-	"github.com/suborbital/reactr/api/tinygo/runnable" 
+	"github.com/suborbital/reactr/api/tinygo/runnable"
 )
 
 type Hey struct{}
@@ -1214,7 +1215,7 @@ func main() {}
 
 ---
 
-# Sat 
+# Sat
 Pas uniquement une librairie, mais aussi un serveur http
 - À base de "**Runnables**"
 - Multi langages
@@ -1387,9 +1388,9 @@ ul {
 - https://github.com/WebAssembly/component-model
   - amélioration intégration host
   - activité (GitHub Insights) en début d'année et un peu récemment
-- https://github.com/WebAssembly/interface-types 
+- https://github.com/WebAssembly/interface-types
   - reporté dans component-model
-- https://github.com/WebAssembly/exception-handling 
+- https://github.com/WebAssembly/exception-handling
   - grosse activité en début d'année
 - https://github.com/WebAssembly/debugging
   - 💀 😢
